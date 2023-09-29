@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <object-set>
+    <table path="forum.dbo.topic">
+      <table path="forum.dbo.posts" name="Topic-Post Joiner" from="id" to="topic"/>
+    </table>
+    <table path="wallet.dbo.wallets">
+      <table path="wallet.dbo.users" name="wallet_to_users" from="owner" to="id"/>
+    </table>
+  </object-set>
+</data>
