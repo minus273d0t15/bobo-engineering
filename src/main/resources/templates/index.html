@@ -33,9 +33,36 @@
 <div th:replace="fragments/header :: header"></div>
 <div th:replace="fragments/hero :: hero"></div>
 <main id="main">
-    <div th:replace="fragments/about :: about">
-    </div>
-</main>
+    <div th:replace="fragments/about :: about"></div>
+    <div th:replace="fragments/clients :: clients"></div>
+    <div th:replace="fragments/features :: features"></div>
+    <div th:replace="fragments/services :: services"></div>
+    <div th:replace="fragments/cta :: cta"></div>
+    <div th:replace="fragments/portfolio :: portfolio"></div>
+    <div th:replace="fragments/counts :: counts"></div>
+    <div th:replace="fragments/testimonials :: testimonials"></div>
+    <div th:replace="fragments/team :: team"></div>
+    <div th:replace="fragments/contact :: contact"></div>
+
+</main><!-- End #main -->
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script th:src="@{../vendor/purecounter/purecounter.js}"></script>
+<script th:src="@{../vendor/aos/aos.js}"></script>
+<script th:src="@{../vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{../vendor/glightbox/js/glightbox.min.js}"></script>
+<script th:src="@{../vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+<script th:src="@{../vendor/swiper/swiper-bundle.min.js}"></script>
+<script th:src="@{../vendor/php-email-form/validate.js}"></script>
+
+
+<!-- Template Main JS File -->
+<script th:src="@{../js/main.js}"></script>
 
 </body>
 </html>
