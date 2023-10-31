@@ -462,7 +462,6 @@ section {
 }
 .section-title p {
   margin: 0;
-  margin: 0;
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
@@ -519,7 +518,6 @@ section {
 .clients .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: #fff;
   opacity: 1;
   background-color: #ddd;
 }
@@ -569,7 +567,6 @@ section {
   background: #fff;
 }
 .services .icon-box .icon {
-  margin: 0 auto;
   width: 64px;
   height: 64px;
   background: #ffc451;
@@ -577,7 +574,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   transition: 0.3s;
 }
 .services .icon-box .icon i {
@@ -991,8 +988,6 @@ section {
   text-align: center;
 }
 .team .member .social a {
-  transition: color 0.3s;
-  color: #151515;
   margin: 0 3px;
   border-radius: 4px;
   width: 36px;
@@ -1119,7 +1114,6 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 .contact .php-email-form input, .contact .php-email-form textarea {
-  border-radius: 0;
   box-shadow: none;
   font-size: 14px;
   border-radius: 4px;
