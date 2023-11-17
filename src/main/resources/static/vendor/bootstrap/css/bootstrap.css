@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/*!
- * Bootstrap v5.1.3 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -679,7 +673,7 @@ progress {
 }
 
 .col {
-  flex: 1 0 0%;
+  flex: 1 0 0;
 }
 
 .row-cols-auto > * {
@@ -888,7 +882,7 @@ progress {
 
 @media (min-width: 576px) {
   .col-sm {
-    flex: 1 0 0%;
+    flex: 1 0 0;
   }
 
   .row-cols-sm-auto > * {
@@ -1101,7 +1095,7 @@ progress {
 }
 @media (min-width: 768px) {
   .col-md {
-    flex: 1 0 0%;
+    flex: 1 0 0;
   }
 
   .row-cols-md-auto > * {
@@ -1314,7 +1308,7 @@ progress {
 }
 @media (min-width: 992px) {
   .col-lg {
-    flex: 1 0 0%;
+    flex: 1 0 0;
   }
 
   .row-cols-lg-auto > * {
@@ -1527,7 +1521,7 @@ progress {
 }
 @media (min-width: 1200px) {
   .col-xl {
-    flex: 1 0 0%;
+    flex: 1 0 0;
   }
 
   .row-cols-xl-auto > * {
@@ -1740,7 +1734,7 @@ progress {
 }
 @media (min-width: 1400px) {
   .col-xxl {
-    flex: 1 0 0%;
+    flex: 1 0 0;
   }
 
   .row-cols-xxl-auto > * {
@@ -2120,31 +2114,31 @@ progress {
   -webkit-overflow-scrolling: touch;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
   .table-responsive-sm {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .table-responsive-md {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
-@media (max-width: 991.98px) {
+@media (max-width: 992px) {
   .table-responsive-lg {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1200px) {
   .table-responsive-xl {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
-@media (max-width: 1399.98px) {
+@media (max-width: 1400px) {
   .table-responsive-xxl {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -4610,7 +4604,7 @@ textarea.form-control-lg {
     flex-flow: row wrap;
   }
   .card-group > .card {
-    flex: 1 0 0%;
+    flex: 1 0 0;
     margin-bottom: 0;
   }
   .card-group > .card + .card {
@@ -5624,7 +5618,7 @@ textarea.form-control-lg {
   border-radius: 0;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
   .modal-fullscreen-sm-down {
     width: 100vw;
     max-width: none;
@@ -5646,7 +5640,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .modal-fullscreen-md-down {
     width: 100vw;
     max-width: none;
@@ -5668,7 +5662,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
 }
-@media (max-width: 991.98px) {
+@media (max-width: 992px) {
   .modal-fullscreen-lg-down {
     width: 100vw;
     max-width: none;
@@ -5690,7 +5684,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1200px) {
   .modal-fullscreen-xl-down {
     width: 100vw;
     max-width: none;
@@ -5712,7 +5706,7 @@ textarea.form-control-lg {
     border-radius: 0;
   }
 }
-@media (max-width: 1399.98px) {
+@media (max-width: 1400px) {
   .modal-fullscreen-xxl-down {
     width: 100vw;
     max-width: none;
@@ -5743,7 +5737,6 @@ textarea.form-control-lg {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
-  text-align: left;
   text-align: start;
   text-decoration: none;
   text-shadow: none;
@@ -5845,7 +5838,6 @@ textarea.form-control-lg {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
-  text-align: left;
   text-align: start;
   text-decoration: none;
   text-shadow: none;
@@ -6393,15 +6385,15 @@ textarea.form-control-lg {
 
 @-webkit-keyframes placeholder-wave {
   100% {
-    -webkit-mask-position: -200% 0%;
-    mask-position: -200% 0%;
+    -webkit-mask-position: -200% 0;
+    mask-position: -200% 0;
   }
 }
 
 @keyframes placeholder-wave {
   100% {
-    -webkit-mask-position: -200% 0%;
-    mask-position: -200% 0%;
+    -webkit-mask-position: -200% 0;
+    mask-position: -200% 0;
   }
 }
 .clearfix::after {
