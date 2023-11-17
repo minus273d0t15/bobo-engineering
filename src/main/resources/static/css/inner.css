@@ -1,0 +1,32 @@
+
+.left-image {
+    float: left;
+    margin-right: 20px;
+    display: block;
+}
+
+.right-content {
+    margin-left: 20px; /* Adjust spacing using rem */
+}
+.mid-image {
+    float: none; /* Remove float to center the image */
+    margin: 0 auto; /* Auto margins to center the image */
+    display: block; /* Make the image a block element */
+}
+
+ body {
+     margin: 0;
+     padding: 0;
+     background-image: url('/img/398208866_296711279861103_3079479431854537032_n.jpg');
+     background-size: cover;
+     background-position: center;
+ }
+
+.content-board {
+    max-width: 80%;
+    margin: 10% auto;
+    padding: 5%;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.85);
+}
