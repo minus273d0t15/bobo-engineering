@@ -1330,3 +1330,8 @@ section {
   font-size: 13px;
   color: #fff;
 }
+.mid-imageCustom {
+  float: none; /* Remove float to center the image */
+  margin: 0 auto; /* Auto margins to center the image */
+  display: block; /* Make the image a block element */
+}

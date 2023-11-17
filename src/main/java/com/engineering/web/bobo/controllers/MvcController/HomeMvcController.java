@@ -17,5 +17,13 @@ public class HomeMvcController {
         public String whoAreWe(){
             return "who_are_we";
         }
+       @GetMapping("управление-на-проекти-в-строителство")
+            public String projectManagementInConstruction(){
+            return "project_management_in_construction";
+            }
+            @GetMapping("engineering")
+        public String engineering(){
+        return "engineering";
+            }
     }
 
