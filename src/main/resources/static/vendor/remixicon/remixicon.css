@@ -495,6 +495,7 @@
 .ri-compass-discover-line:before { content: "\ebc2"; }
 .ri-compass-fill:before { content: "\ebc3"; }
 .ri-compass-line:before { content: "\ebc4"; }
+.fa-bounce:before { content: "\f0ae";}
 .ri-compasses-2-fill:before { content: "\ebc5"; }
 .ri-compasses-2-line:before { content: "\ebc6"; }
 .ri-compasses-fill:before { content: "\ebc7"; }
