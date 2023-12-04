@@ -20,28 +20,35 @@
             </div>
 
             <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
+
+                <div class="col-xl-2 col-md-4"  onclick="redirectToEndpoint(['управление-на-проекти-в-строителство'])">
+                    <div class="icon-box" >
                         <i class="ri-list-ordered"></i>
-                        <h3><a href="">Управление на проекти в строителството</a></h3>
+                        <h3><a href="/управление-на-проекти-в-строителство">Управление на проекти в строителството</a></h3>
                     </div>
                 </div>
-                <div class="col-xl-2 col-md-4">
+                <script>
+                    function redirectToEndpoint(input) {
+                    let a = input[0];
+                        window.location.href =a ;
+                    }
+                </script>
+                <div class="col-xl-2 col-md-4"   onclick="redirectToEndpoint(['engineering'])">
                     <div class="icon-box">
                       <i class="ri-pen-nib-fill"></i>
-                        <h3><a href="">Проектиране</a></h3>
+                        <h3><a href="/engineering">Проектиране</a></h3>
                     </div>
                 </div>
-                <div class="col-xl-2 col-md-4">
+                <div class="col-xl-2 col-md-4"   onclick="redirectToEndpoint(['consultancy_services'])">
                     <div class="icon-box">
                         <i class="ri-lightbulb-fill"></i>
-                        <h3><a href="">Консултантска дейност</a></h3>
+                        <h3><a href="/consultancy_services">Консултантска дейност</a></h3>
                     </div>
                 </div>
-                <div class="col-xl-2 col-md-4">
+                <div class="col-xl-2 col-md-4"   onclick="redirectToEndpoint(['quality-control'])">
                     <div class="icon-box">
                         <i class="ri-paint-brush-line"></i>
-                        <h3><a href="">Контрол при строителни и строително-ремонтни дейности</a></h3>
+                        <h3><a href="quality-control">Контрол при строителни и строително-ремонтни дейности</a></h3>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4">
