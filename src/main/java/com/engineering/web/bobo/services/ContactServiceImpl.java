@@ -40,7 +40,8 @@ public class ContactServiceImpl implements ContactService{
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
         helper.setFrom(userEmail, senderName);
-        helper.setTo("bobo.engineering@gmail.com");
+//        helper.setTo("bobo.engineering@gmail.com");
+        helper.setTo("minus273dot15@gmail.com");
         helper.setSubject("Bobo Engineering Site Contact Form: " + userSubject);
 
         content = content.replace("[[userName]]", userName);

@@ -6,6 +6,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.MessagingException;
 import java.io.UnsupportedEncodingException;
@@ -17,11 +18,13 @@ public class ContactRestController {
     private ContactService emailService;
 
     @PostMapping("/contact")
-    public String sendEmail(@RequestParam String email,
+    public ModelAndView  sendEmail(@RequestParam String email,
                             @RequestParam String name,
                             @RequestParam String subject,
                             @RequestParam String message) throws MessagingException, UnsupportedEncodingException {
         emailService.sendEmail(email, name, subject, message);
-        return "Email sent successfully";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("contact_success");
+        return modelAndView;
     }
 }
