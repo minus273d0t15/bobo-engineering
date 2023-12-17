@@ -8,5 +8,5 @@ import java.io.UnsupportedEncodingException;
 public interface ContactService {
     void create(Contact contact) throws MessagingException, UnsupportedEncodingException;
 
-    void sendTestEmail(String senderUserEmail) throws MessagingException, UnsupportedEncodingException;
+    void sendEmail(String userEmail, String subject, String message) throws MessagingException, UnsupportedEncodingException;
 }

@@ -27,8 +27,7 @@ public class ContactServiceImpl implements ContactService{
     }
 
     @Override
-    public void sendTestEmail(String senderUserEmail) throws MessagingException, UnsupportedEncodingException {
-        String toAddress = senderUserEmail;
+    public void sendEmail(String userEmail, String userSubject, String userMessage) throws MessagingException, UnsupportedEncodingException {
         String fromAddress = "bobo.test@gmail.com";
         String senderName = "Bobo Team";
         String subject = "Bobo - test mail";
@@ -41,7 +40,7 @@ public class ContactServiceImpl implements ContactService{
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
         helper.setFrom(fromAddress, senderName);
-        helper.setTo(toAddress);
+        helper.setTo(userEmail);
         helper.setSubject(subject);
 
         content = content.replace("[[senderUserEmail]]", "tester");
