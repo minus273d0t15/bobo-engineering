@@ -18,8 +18,9 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
+//    runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 
+    implementation 'mysql:mysql-connector-java:8.0.23'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'

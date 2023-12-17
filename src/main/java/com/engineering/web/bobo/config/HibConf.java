@@ -29,7 +29,7 @@ public class HibConf {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl(dbUrl);
         dataSource.setUsername(dbUsername);
         dataSource.setPassword(dbPassword);
@@ -48,8 +48,8 @@ public class HibConf {
 
     private Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
-        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
-        hibernateProperties.setProperty("hibernate.legacy_limit_handler", "true");
+        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        hibernateProperties.setProperty("hibernate.connection.autocommit", "false");
         return hibernateProperties;
 
     }
