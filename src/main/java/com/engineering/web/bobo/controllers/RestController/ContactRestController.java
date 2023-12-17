@@ -18,9 +18,10 @@ public class ContactRestController {
 
     @PostMapping("/contact")
     public String sendEmail(@RequestParam String email,
+                            @RequestParam String name,
                             @RequestParam String subject,
                             @RequestParam String message) throws MessagingException, UnsupportedEncodingException {
-        emailService.sendEmail(email, subject, message);
+        emailService.sendEmail(email, name, subject, message);
         return "Email sent successfully";
     }
 }

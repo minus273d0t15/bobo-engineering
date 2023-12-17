@@ -27,23 +27,24 @@ public class ContactServiceImpl implements ContactService{
     }
 
     @Override
-    public void sendEmail(String userEmail, String userSubject, String userMessage) throws MessagingException, UnsupportedEncodingException {
-        String fromAddress = "bobo.test@gmail.com";
+    public void sendEmail(String userEmail, String userName, String userSubject, String userMessage) throws MessagingException, UnsupportedEncodingException {
         String senderName = "Bobo Team";
-        String subject = "Bobo - test mail";
-        String content = "Dear User,<br>"
-                + "This is a test mail from [[senderUserEmail]]"
-                + "Thank you,<br>"
-                + "Bobo Team";
+        String content = "Здрасти,<br />"
+                + "Следното съобщение бе изпратено от [[userName]] с поща за обратна връзка [[userEmail]] :<br />"
+                + "Тема: "
+                + userSubject + "<br />"
+                + "Съдържание: "
+                + userMessage;
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
-        helper.setFrom(fromAddress, senderName);
-        helper.setTo(userEmail);
-        helper.setSubject(subject);
+        helper.setFrom(userEmail, senderName);
+        helper.setTo("bobo.engineering@gmail.com");
+        helper.setSubject("Bobo Engineering Site Contact Form: " + userSubject);
 
-        content = content.replace("[[senderUserEmail]]", "tester");
+        content = content.replace("[[userName]]", userName);
+        content = content.replace("[[userEmail]]", userEmail);
         helper.setText(content, true);
         mailSender.send(message);
     }
