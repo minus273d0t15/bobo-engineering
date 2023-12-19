@@ -41,6 +41,7 @@ public class ContactServiceImpl implements ContactService{
 
         helper.setFrom(userEmail, senderName);
         helper.setTo("bobo.engineering@gmail.com");
+//        Test mail address
 //        helper.setTo("minus273dot15@gmail.com");
         helper.setSubject("Bobo Engineering Site Contact Form: " + userSubject);
 
