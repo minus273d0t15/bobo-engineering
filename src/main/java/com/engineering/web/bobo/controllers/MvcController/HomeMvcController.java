@@ -1,13 +1,14 @@
 package com.engineering.web.bobo.controllers.MvcController;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.persistence.EntityNotFoundException;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,24 +57,29 @@ public class HomeMvcController {
         //Further migration to SQL queries expected/grep image path info by SQL, editable in admin panel/
         if (Integer.parseInt(projectID) > 2 || Integer.parseInt(projectID) < 1) return "NotFoundView";
         try {
-            String directoryPath = "/img/portfolio/project0"+projectID+"/";
-            File dir = new File(directoryPath);
-            File[] directoryListing = dir.listFiles();
-            List<String> imagePaths = new ArrayList<>();
+            String resourcePath = "static/img/portfolio/project0" + projectID + "/";
+            ClassPathResource imgDir = new ClassPathResource(resourcePath);
 
-            if (directoryListing != null) {
-                for (File child : directoryListing) {
-                    if (child.isFile() && child.getName().toLowerCase().endsWith(".jpg")) {
-                        imagePaths.add(directoryPath + child.getName());
+            if (imgDir.exists() && imgDir.getFile().isDirectory()) {
+                File[] directoryListing = imgDir.getFile().listFiles();
+                List<String> imagePaths = new ArrayList<>();
+
+                if (directoryListing != null) {
+                    for (File child : directoryListing) {
+                        if (child.isFile() && child.getName().toLowerCase().endsWith(".jpg")) {
+                            imagePaths.add("/img/portfolio/project0" + projectID + "/" + child.getName());
+                        }
                     }
                 }
+
+                model.addAttribute("pictures", imagePaths);
+                model.addAttribute("ID", projectID);
             }
-            model.addAttribute("pictures", imagePaths);
             return "portfolio-details";
-        } catch (EntityNotFoundException e) {
-            model.addAttribute("error", e.getMessage());
+        } catch (IOException e) {
             return "NotFoundView";
         }
+
+
     }
 }
-
