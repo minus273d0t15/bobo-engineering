@@ -3,14 +3,19 @@ package com.engineering.web.bobo.controllers.MvcController;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/")
@@ -66,7 +71,8 @@ public class HomeMvcController {
 
                 if (directoryListing != null) {
                     for (File child : directoryListing) {
-                        if (child.isFile() && child.getName().toLowerCase().endsWith(".jpg")) {
+                        String fileName = child.getName().toLowerCase();
+                        if (child.isFile() && fileName.endsWith(".jpg") && !fileName.contains("thumb")) {
                             imagePaths.add("/img/portfolio/project0" + projectID + "/" + child.getName());
                         }
                     }
@@ -74,6 +80,24 @@ public class HomeMvcController {
 
                 model.addAttribute("pictures", imagePaths);
                 model.addAttribute("ID", projectID);
+            }
+
+            //load txt content, same folder
+            ClassPathResource projectInfoFile = new ClassPathResource(resourcePath + "project_info.txt");
+
+            String projectInfoContent;
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(projectInfoFile.getInputStream()))) {
+                projectInfoContent = reader.lines().collect(Collectors.joining("\n"));
+                Map<String, String> projectDetails = new HashMap<>();
+                Pattern pattern = Pattern.compile("^(.*?):\\s*(.*?)$", Pattern.MULTILINE);
+                Matcher matcher = pattern.matcher(projectInfoContent);
+
+                while (matcher.find()) {
+                    projectDetails.put(matcher.group(1).trim(), matcher.group(2).trim());
+                }
+                model.addAttribute("projectDetails", projectDetails);
+            } catch (IOException e) {
+                return "NotFoundView";
             }
             return "portfolio-details";
         } catch (IOException e) {
