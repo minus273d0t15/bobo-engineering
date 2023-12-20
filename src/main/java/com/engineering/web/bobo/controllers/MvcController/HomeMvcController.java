@@ -60,7 +60,7 @@ public class HomeMvcController {
     public String getByPhoneNumber(@PathVariable String projectID, Model model) {
         //Temporary solution; Get path by ID to images
         //Further migration to SQL queries expected/grep image path info by SQL, editable in admin panel/
-        if (Integer.parseInt(projectID) > 2 || Integer.parseInt(projectID) < 1) return "NotFoundView";
+        if (Integer.parseInt(projectID) > 3 || Integer.parseInt(projectID) < 1) return "NotFoundView";
         try {
             String resourcePath = "static/img/portfolio/project0" + projectID + "/";
             ClassPathResource imgDir = new ClassPathResource(resourcePath);
