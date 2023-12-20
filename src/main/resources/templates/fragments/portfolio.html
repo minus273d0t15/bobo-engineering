@@ -11,17 +11,17 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Portfolio</h2>
-                <p>Check our Portfolio</p>
+                <h2 th:text="#{bobo.portfolio_heading}">Portfolio</h2>
+                <p th:text="#{bobo.portfolio_subheading}">Check our Portfolio</p>
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
+                        <li data-filter="*" class="filter-active">Всички</li>
+                        <li data-filter=".filter-app">Офис сгради</li>
+                        <li data-filter=".filter-card">Жилищни сгради</li>
+                        <li data-filter=".filter-web">Производствени сгради</li>
                     </ul>
                 </div>
             </div>
@@ -30,14 +30,14 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
-                        <img src="../img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <img src="../img/portfolio/project01/project_image1_thumb.jpg" class="img-fluid" alt="">
                         <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
+                            <h4>Office 1</h4>
+                            <p>Office</p>
                             <div class="portfolio-links">
-                                <a href="../img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="../img/portfolio/project01/project_image1.jpg" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox" title="Office building"><i class="bx bx-plus"></i></a>
+                                <a href="/portfolio/1" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
